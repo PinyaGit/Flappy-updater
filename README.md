@@ -120,6 +120,30 @@ npm run dev
 
 In development mode, the application ignores the `launcherVer` checking, which allows for easier testing without needing to increment the version for each change.
 
+## Генерация манифеста файлов игры
+
+Для обновления игры по отдельным файлам используется манифест с хешами файлов. Чтобы сгенерировать такой манифест:
+
+1. Убедитесь, что у вас установлен Node.js.
+2. Поместите скрипт `generate_manifest.js` в корень проекта или рядом с папкой игры.
+3. Откройте терминал и выполните команду:
+
+```
+node generate_manifest.js <путь_к_папке_игры>
+```
+
+Например, если папка с игрой называется `FlappyRU` и находится рядом со скриптом:
+
+```
+node generate_manifest.js ../FlappyRU
+```
+
+В результате будет создан файл манифеста (например, `FlappyRU_manifest.json`) рядом с папкой игры. В этом файле будут перечислены все файлы игры и их md5-хеши.
+
+**Важно:**
+- В манифест не попадают скрытые файлы и файлы с "manifest.json" в названии.
+- Для больших папок процесс может занять несколько минут.
+
 ## Additional Notes
 
 Users are encouraged to open issues for any bugs or feature requests and to submit pull requests for improvements. Your contributions help make this project better for everyone!
